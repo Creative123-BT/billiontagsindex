@@ -1,0 +1,82 @@
+/* --- NAVBAR STYLES --- */
+.navbar {
+    background: rgba(0, 0, 0, 0.15) !important;
+    transition: background 0.3s, box-shadow 0.3s;
+    z-index: 10;
+  }
+  .navbar .nav-link {
+    color: #fff !important;
+    transition: color 0.2s;
+  }
+  .navbar .nav-link.active {
+    color: #7c3aed !important;
+  }
+  .navbar .nav-link:not(.active):hover {
+    color: #7c3aed !important;
+  }
+  .navbar .dropdown-toggle::after {
+    display: none !important;
+  }
+  /* --- SCROLLED STATE --- */
+  .navbar.scrolled {
+    background: #fff !important;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.12);
+  }
+  .navbar.scrolled .nav-link {
+    color: #111 !important;
+  }
+  .navbar.scrolled .nav-link.active {
+    color: #7c3aed !important;
+  }
+  .navbar.scrolled .nav-link:not(.active):hover {
+    color: #7c3aed !important;
+  }
+  .dropdown-menu {
+    background: rgba(30, 30, 60, 0.97);
+    border-radius: 0.5rem;
+    border: none;
+    min-width: 180px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+  }
+  .dropdown-item {
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+    cursor: pointer;
+  }
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background: #7c3aed;
+    color: #fff;
+  }
+  /* Default toggler icon (white) */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: background-image 0.3s ease;
+  }
+
+  /* Toggler icon when navbar is scrolled (black lines) */
+  .navbar.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.85%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    transition: all 0.3s ease;
+    color: #fff !important;
+  }
+  .navbar.scrolled .navbar-brand {
+    color: #111 !important;
+  }
+  .navbar-brand img {
+    height: 38px;
+    width: auto;
+    margin-right: 8px;
+    margin-top: -3px;
+    transition: all 0.3s ease;
+  }
