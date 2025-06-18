@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact</title>
+    <link rel="icon" href="/assets/img/Logo/infinity.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bebas Neue font for headings -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #fff;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .hero-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+      /* --- NAVBAR STYLES --- */
+      .navbar {
+        transition: background 0.3s, box-shadow 0.3s;
+        z-index: 10;
+      }
+      .navbar .nav-link {
+        color: #111 !important;
+        transition: color 0.2s;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .navbar .nav-link.active {
+        color: #9221e5 !important;
+      }
+      .navbar .nav-link:not(.active):hover {
+        color: #9221e5 !important;
+      }
+      .navbar .dropdown-toggle::after {
+        display: none !important;
+      }
+      /* --- SCROLLED STATE --- */
+      .navbar.scrolled {
+        background: #fff !important;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.12);
+      }
+      .navbar.scrolled .nav-link {
+        color: #111 !important;
+      }
+      .navbar.scrolled .nav-link.active {
+        color: #9221e5 !important;
+      }
+      .navbar.scrolled .nav-link:not(.active):hover {
+        color: #9221e5 !important;
+      }
+      .dropdown-menu {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: none;
+        min-width: 120px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .dropdown-item {
+        color: #000;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.15s, color 0.15s;
+        cursor: pointer;
+      }
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background: #9221e5;
+        color: #fff;
+      }
+      /* Default toggler icon (white) */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.85%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        transition: background-image 0.3s ease;
+      }
+
+      /* Toggler icon when navbar is scrolled (black lines) */
+      .navbar.scrolled .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.85%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 2rem;
+        letter-spacing: -1px;
+        transition: all 0.3s ease;
+        color: #fff !important;
+      }
+      .navbar.scrolled .navbar-brand {
+        color: #111 !important;
+      }
+      .navbar-brand img {
+        height: 25px;
+        width: auto;
+        margin-right: 8px;
+        margin-top: -3px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-brand {
+          font-size: 1.5rem;
+        }
+        .navbar-brand img {
+          height: 32px;
+        }
+      }
+      @media (max-width: 575px) {
+        .navbar-brand {
+          font-size: 1.1rem;
+        }
+        .navbar-brand img {
+          height: 26px;
+        }
+      }
+
+      @media (min-width: 1025px) {
+        .navbar .dropdown:hover > .dropdown-menu,
+        .navbar .dropdown-menu:hover {
+          display: block;
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .hero-bg-video {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(1) blur(0px);
+      }
+      .hero-overlay {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-title {
+        font-size: 5vw;
+        font-weight: 500;
+        color: #3a2179;
+        margin-bottom: -1rem;
+        margin-top: -80px;
+        letter-spacing: -1px;
+        font-family: "Raleway", sans-serif;
+        justify-content: center;
+      }
+      .hero-desc {
+        max-width: 800px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #222;
+        margin: 30px auto 2rem auto;
+        line-height: 2;
+        font-family: "Raleway", sans-serif;
+      }
+
+      .contact-gradient-section {
+        position: relative;
+        height: 50vh;
+        margin-top: 40px;
+        padding: 48px 16px 64px 16px;
+        border-radius: 24px;
+        /* background: linear-gradient(90deg, #e04fd5 0%, #5b8cff 100%); */
+        background: linear-gradient(
+          35deg,
+          #ffb86c 0%,
+          #ff5ec7 25%,
+          #a172ff 50%,
+          #6befff 100%
+        );
+        /* background: linear-gradient(to bottom, #6befff 0%, #a172ff 30%, #ff5ec7 65%, #ffb86c 100%); */
+        overflow: hidden;
+        text-align: center;
+        z-index: 1;
+      }
+      .contact-gradient-section h2 {
+        font-family: "Raleway", sans-serif;
+        font-size: 4rem;
+        font-weight: 750;
+        color: #fff;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        position: absolute;
+        left: 40%;
+        top: 5%;
+      }
+
+      @media (max-width: 575.98px) {
+        .contact-gradient-section h2 {
+          font-family: "Raleway", sans-serif;
+          font-size: 2rem;
+          font-weight: 750;
+          color: #fff;
+          left: 30%;
+        }
+        .contact-gradient-section p {
+          color: #fff;
+
+          font-family: "Raleway", sans-serif;
+          font-size: 4rem;
+          line-height: 2vh;
+          left: 10%;
+          position: relative;
+        }
+        .media-img {
+          width: 100%;
+        }
+      }
+      .contact-gradient-section p {
+        color: #fff;
+        opacity: 0.92;
+        max-width: 360px;
+        /* margin: 0 auto 32px auto; */
+        font-family: "Raleway", sans-serif;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
+        left: 35%;
+        top: 30%;
+        position: absolute;
+      }
+      .contact-outline-text {
+        position: absolute;
+        left: -130px;
+        right: 400px;
+        bottom: -55px;
+        font-family: "Raleway", sans-serif;
+        font-size: 10vw;
+        font-weight: 500;
+        color: transparent;
+        -webkit-text-stroke: 1px #fff;
+        text-stroke: 3px #fff;
+        opacity: 1;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        width: 100%;
+      }
+      .contact-info-section {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        z-index: 1;
+        position: relative;
+      }
+      .contact-card {
+        padding: 32px 18px;
+        text-align: left;
+        margin-bottom: 24px;
+        min-height: 50px;
+
+      }
+      .contact-card h5 {
+        font-family: "Raleway", sans-serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #4a2497;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+        text-align: start;
+      }
+
+      .contact-card a,
+      .contact-card p {
+        color: #3c2566;
+        font-size: 0.7rem;
+        margin-bottom: 4px;
+        /* word-break: break-all; */
+        font-family: "Raleway", sans-serif;
+      }
+      .contact-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .contact-card ul li {
+        display: inline-block;
+      }
+      .contact-form-section {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: -600px;
+        /* margin-bottom: 40px; */
+        position: relative;
+        z-index: 1;
+      }
+      .contact-form-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(80, 40, 160, 0.1);
+        padding: 32px 24px;
+        max-width: 370px;
+        width: 100%;
+        margin-left: auto;
+      }
+      @media (max-width: 991px) {
+        .contact-form-section {
+          margin-top: 20px;
+          justify-content: center;
+        }
+        .contact-gradient-section {
+          padding-bottom: 100px;
+        }
+        .contact-form-card {
+          max-width: 650px;
+        }
+        .contact-outline-text {
+          font-size: 13vw;
+          bottom: -31px;
+          left: 0;
+        }
+        .contact-gradient-section p {
+          left: 25%;
+          line-height: 1.2rem;
+          font-size: 1rem;
+        }
+        .contact-gradient-section h2 {
+          left: 30%;
+        }
+      }
+      @media (max-width: 767px) {
+        .contact-form-section {
+          margin-top: 20px;
+        }
+        .contact-gradient-section {
+          padding: 32px 5px 80px 5px;
+        }
+        .contact-outline-text {
+          font-size: 13vw;
+        }
+      }
+      @media (max-width: 479.82px) {
+        .contact-gradient-section {
+          top: -30px;
+        }
+        .contact-gradient-section p {
+          text-align: center;
+          font-size: 0.9rem;
+          line-height: 4vh;
+          left: 8%;
+        }
+        .contact-outline-text {
+          text-align: center;
+          bottom: 0px;
+          font-size: 35px;
+          left: 1%;
+          opacity: 0.3;
+          -webkit-text-stroke: 0.5px #fff;
+          text-stroke: 0.5px #fff;
+        }
+        .row > * {
+          margin-top: 0%;
+        }
+        .py-5 {
+          margin-top: 0%;
+        }
+        .contact-info {
+          margin-bottom: 0 !important;
+        }
+        /* .textitems{
+          margin-top: -33%;
+          margin-left: 30%;
+        } */
+      }
+
+      /* little foooter */
+      .contact-card .container-text {
+        /* margin-left: -20%; */
+        align-items: start;
+        font-size: 0.5rem;
+        top: -30%;
+
+      }
+      .container-text p {
+        /* margin-left: -20%; */
+        text-align: start;
+        font-size: 0.5rem;
+        font-family: "Raleway", sans-serif;
+      }
+
+      .social-icons {
+        gap: -10rem;
+        cursor: pointer;
+      }
+      .social-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        /* background: #fff; */
+        /* box-shadow: 0 1px 4px rgba(0,0,0,0.08); */
+        transition: transform 0.2s;
+      }
+      .social-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .social-icon img {
+        width: 30px;
+        height: 30px;
+      }
+
+      /* address section  */
+
+      .contact-title {
+        color: #ad59eb;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
+        font-family: "Raleway", sans-serif;
+      }
+      .contact-icon {
+        color: #ad59eb;
+        font-size: 1rem;
+        width: 1.5em;
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        line-height: 2rem;
+        letter-spacing: 0.5rem;
+      }
+      .contact-info {
+        margin-bottom: 3.5rem;
+        font-size: 0.7rem;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+      }
+      .contact-address {
+        font-size: 0.7rem;
+        color: #222;
+        margin-bottom: 0.5rem;
+        font-family: "Raleway", sans-serif;
+      }
+      /* .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #eee;
+      margin-right: 6px;
+      margin-bottom: 3px;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+      font-size: 1.3rem;
+      color: #a172ff;
+    } */
+      .social-icons a:last-child {
+        margin-right: 0;
+      }
+      .social-icons a:hover {
+        box-shadow: 0 4px 16px rgba(171, 140, 235, 0.12);
+      }
+      .form-section {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 2rem;
+        max-width: 400px;
+        margin-left: auto;
+      }
+      @media (max-width: 991.98px) {
+        .form-section {
+          margin: 2rem auto 0 auto;
+        }
+      }
+      @media (max-width: 768px) {
+        .contact-title {
+          font-size: 1.5rem;
+        }
+        .form-section {
+          padding: 2rem 1rem;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .form-section {
+          padding: 1.5rem 0.5rem;
+        }
+      }
+
+      /* noise section1 */
+
+      .noise-section {
+        position: relative;
+        overflow: hidden;
+        /* Optional: set a background color or gradient under the noise */
+        /* background: #fff; */
+        min-height: 400px;
+        padding: 3rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .noise-overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: url("./assets/img/Contact-Us/Noise-texture.png")
+          repeat;
+        opacity: 0.3; /* Adjust for more/less noise */
+        z-index: -1;
+      }
+
+      @media (max-width: 767.98px) {
+        .noise-section {
+          padding: 2rem 0.5rem;
+        }
+      }
+
+      /* noisey texture */
+
+      .isolate {
+        isolation: isolate; /* create stacking context */
+        position: relative;
+      }
+
+      .noise-filter {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: transparent;
+        filter: url(#noiseFilter);
+        opacity: 0.5;
+      }
+      .modal-content {
+        animation: fadeInUp 0.4s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .modal-body img {
+        animation: pop 0.5s ease-out;
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(0.6);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      section.isolate > .container {
+        position: relative;
+      }
+       /* footer style  */
+      #video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 105%;
+        object-fit: cover;
+        mix-blend-mode: lighten;
+        z-index: 0;
+        margin-top: -1.9rem;
+      }
+      .content-on-video {
+        position: relative;
+        z-index: 2;
+      }
+      .blend-multiply {
+        mix-blend-mode: multiply;
+      }
+      /* Footer Section Background and Spacing */
+      .footer-section {
+        background: #dfe2f9;
+        /* overflow: visible; */
+        padding: 10px;
+        color: #222;
+        padding-top: 2rem;
+      }
+
+      /* Logo */
+      .footer-logo {
+        width: 120px;
+        margin-bottom: 1.2rem;
+      }
+
+      /* Tagline Paragraph */
+      .footer-section p {
+        font-size: 15px;
+        color: #222;
+        margin-bottom: 2.5rem;
+        font-weight: 500;
+      }
+
+      .social-icons {
+        gap: -10rem;
+      }
+      .social-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
+      .social-icon:hover {
+        transform: scale(1.1);
+      }
+      .social-icon img {
+        width: 30px;
+        height: 30px;
+      }
+      .social-icons a:last-child {
+        margin-right: 0;
+      }
+
+      /* Footer Links */
+      .footer-links {
+        list-style: none;
+        padding-left: 0px;
+        margin-bottom: 0;
+      }
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+      .footer-links a {
+        color: #222;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+        color: #9221e5;
+      }
+
+      /* Section Titles (Markets, Audiences, Address) */
+      .footer-section .fw-bold,
+      .footer-section strong {
+        font-weight: 700 !important;
+      }
+
+      /* Address Block */
+      .footer-address {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+        color: #222;
+        text-align: left;
+      }
+
+      /* Copyright */
+      .footer-copy {
+        font-size: 12px;
+        color: #888;
+        text-align: center;
+      }
+
+      .col-lg-6.col-md-6.mb-4.mb-lg-0 {
+        padding: 0px 120px;
+      }
+      .gif-overlay {
+        position: absolute;
+        top: 200px;
+        left: -20%;
+        width: 100%;
+        height: 90%;
+        z-index: 1; /* Behind the content */
+        pointer-events: none; /* So clicks pass through */
+        opacity: 1; /* Adjust transparency */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2;
+      }
+
+      .gif-overlay img {
+        max-width: 400px; /* Adjust size as needed */
+        max-height: 400px;
+      }
+      /* Responsive Styles */
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        .footer-section {
+          text-align: start;
+        }
+        .footer-address {
+          text-align: start;
+        }
+        .gif-overlay {
+          left: -28%;
+        }
+        .col-lg-6.col-md-6.mb-4.mb-lg-0 {
+          padding: 0px 50px;
+        }
+      }
+      @media (max-width: 769px) {
+        .footer-section {
+          padding: 30px 0px;
+        }
+        .footer-logo {
+          width: 120px;
+        }
+        .col-lg-6.col-md-6.mb-4.mb-lg-0 {
+          padding: 0px 50px;
+        }
+        .footer-section p,
+        .footer-address,
+        .footer-links li a {
+          font-size: 12px;
+        }
+        .footer-links li {
+          margin-bottom: 0;
+        }
+        .gif-overlay {
+          left: -36%;
+          top: 150px;
+        }
+        .gif-overlay img {
+          max-width: 330px;
+        }
+        .social-icon {
+          width: 20px;
+          height: 25px;
+        }
+        .social-icon img {
+          width: 20px;
+          height: 20px;
+        }
+        .footer-copy {
+          margin-bottom: 10px;
+        }
+      }
+      @media (max-width: 575px) {
+        .footer-section p,
+        .footer-address,
+        .footer-links li a {
+          font-size: 13px;
+        }
+        .footer-links {
+          padding-right: 20px;
+          padding-left: 0 !important;
+        }
+        .footer-copy {
+          font-size: 8px;
+          margin-bottom: 10px;
+        }
+        .col-lg-6.col-md-6.mb-4.mb-lg-0 {
+          padding: 0px 20px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* .footer-address {
+        order: 1;
+      } */
+
+      @media (max-width: 767.98px) {
+        .footer-address {
+          order: 2;
+        }
+        .gif-overlay {
+          order: 1;
+        }
+      }
+      @media (max-width: 575px) {
+        .gif-overlay {
+          display: none;
+        }
+        .cta-section {
+          padding: 50px 0px 100px;
+        }
+        .media-kit {
+          margin-bottom: 1rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-1 fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="./assets/img/Logo/BILLION TAGS PNG.png"
+            alt="Billion Logo"
+            id="navbarLogo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="company.html">Company</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <!-- Markets Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="marketsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Markets
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="marketsDropdown">
+                <li>
+                  <a class="dropdown-item" href="market-us.html"
+                    >United States</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="market-canada.html">Canada</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="market-australia.html"
+                    >Australia</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="market-newzealand.html"
+                    >New Zealand</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="markets-europe.html">Europe</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="market-middleeast.html"
+                    >Middle East</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="market-asia.html"
+                    >Asia-Pacific</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <!-- Audiences Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="audiencesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Audiences
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="audiencesDropdown">
+                <li>
+                  <a class="dropdown-item" href="ethnicities.html"
+                    >Ethnicities</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="new-commers.html"
+                    >Newcomers</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="pride.html">Pride</a></li>
+                <li>
+                  <a class="dropdown-item" href="religion.html">Religion</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="platforms.html">Platforms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="channels.html">Channels</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="brands.html">Brands</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="expertise.html">Expertise</a>
+            </li>
+            <!-- Blogs & Insights Dropdown -->
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="utility.html">Utility</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section p-5" style="background-color: #e2dffb">
+      <!-- Background Video -->
+      <video class="hero-bg-video" autoplay loop muted playsinline>
+        <source
+          src="./assets/img/Contact-Us/ripples-on-water-light-theme1-cropped-2k.mp4"
+          type="video/mp4"
+        />
+        <!-- Add WebM/OGG sources for better compatibility if available -->
+        Your browser does not support the video tag.
+      </video>
+      <!-- Overlay Content -->
+      <div class="hero-overlay">
+        <h1 class="hero-title">Get in Touch with Us</h1>
+        <div class="hero-desc">
+          At Billiontags, we believe that diverse perspectives are key to
+          creating innovative & impactful marketing strategies. Whether you’re
+          looking to connect with multicultural audiences or expand your reach
+          across different cultures, we’re here to help. Our team of experts is
+          dedicated to crafting tailored solutions that resonate with your
+          target market & drive results.
+        </div>
+      </div>
+    </section>
+    <!-- Gradient Section with Outlined Text -->
+    <section class="container contact-gradient-section">
+      <section>
+        <div class="noise-filter"></div>
+      </section>
+
+      <!-- svg code for noise texture  -->
+      <svg style="display: none">
+        <filter id="noiseFilter">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
+        </filter>
+      </svg>
+      <!-- End --- svg code for noise texture  -->
+
+      <div class="noise-overlay"></div>
+      <h2>Hit Us Up</h2>
+      <p>
+        Let’s create something amazing together! Whether it’s a project
+        partnership, joining our team, or showcasing your innovative approach,
+        we’re excited to connect and explore possibilities. Contact us using the
+        form below and we’ll get back to you right away.
+      </p>
+      <div class="contact-outline-text">Contact Us</div>
+    </section>
+
+    <!-- Contact Info and Form -->
+    <div class="container">
+      <div class="container py-5">
+        <div class="row g-4">
+          <section>
+          <!-- Contact Info Columns -->
+          <div class="col-lg-8">
+            <div class="row g-4">
+              <!-- APAC -->
+              <div class="col-md-4">
+                <div class="contact-title">APAC</div>
+                <div class="contact-info">
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></span>
+                    Official@billiontags.com
+                  </div>
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-phone"></i
+                    ></span>
+                    +91 98765 43210 , +91 98765 43210
+                  </div>
+                  <div class="contact-address">
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-location-dot"></i
+                    ></span>
+                    782, 1st Floor, Anna Salai, Above Sundaram Honda, Opp. YMCA
+                    Grounds, CIT Nagar East, Nandanam, Chennai, Tamil Nadu,
+                    India 600 035.
+                  </div>
+                </div>
+              </div>
+              <!-- US & Canada -->
+              <div class="col-md-4">
+                <div class="contact-title">US & Canada</div>
+                <div class="contact-info">
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></span>
+                    Official@billiontags.com
+                  </div>
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-phone"></i
+                    ></span>
+                    +91 98765 43210 , +91 98765 43210
+                  </div>
+                  <div class="contact-address">
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-location-dot"></i
+                    ></span>
+                    782, 1st Floor, Anna Salai, Above Sundaram Honda, Opp YMCA
+                    Grounds, CIT Nagar East, Nandanam, Chennai, Tamil Nadu,
+                    India 600 035.
+                  </div>
+                </div>
+              </div>
+              <!-- EMEA -->
+              <div class="col-md-4">
+                <div class="contact-title">EMEA</div>
+                <div class="contact-info">
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></span>
+                    Official@billiontags.com
+                  </div>
+                  <div>
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-phone"></i
+                    ></span>
+                    +91 98765 43210 , +91 98765 43210
+                  </div>
+                  <div class="contact-address">
+                    <span class="contact-icon"
+                      ><i class="fa-solid fa-location-dot"></i
+                    ></span>
+                    782, 1st Floor, Anna Salai, Above Sundaram Honda, Opp YMCA
+                    Grounds, CIT Nagar East, Nandanam, Chennai, Tamil Nadu,
+                    India 600 035.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Social Media Row -->
+            </section>
+            <section style="z-index: 999999999999;">
+            <div class="container-text">
+              <div class="text-center mb-4">
+                <p>
+                  Follow us on our social media channels to stay up to date with
+                  <br />
+                  the latest in multicultural marketing trends and news:
+                </p>
+              </div>
+              <div
+                class="d-flex justify-content-start align-items-center flex-wrap social-icons blend-multiply"
+              >
+                <a
+                  href="https://www.facebook.com/billiontags/"
+                  class="social-icon"
+                  target="_blank"
+                  ><img src="./assets/img/footer/FB.png" alt="Facebook"
+                /></a>
+                <a
+                  href="https://www.instagram.com/hey.billiontags/"
+                  class="social-icon"
+                   target="_blank"
+                  ><img src="./assets/img/footer/INSTA.png" alt="Instagram"
+                /></a>
+                <a
+                  href="https://www.threads.com/@hey.billiontags"
+                  class="social-icon"
+                   target="_blank"
+                  ><img src="./assets/img/footer/THREADS.png" alt="Threads"
+                /></a>
+                <a
+                  href="https://www.youtube.com/@Billiontags"
+                  class="social-icon"
+                   target="_blank"
+                  ><img src="./assets/img/footer/YT.png" alt="YouTube"
+                /></a>
+                <a href="https://x.com/billiontags"
+                class="social-icon"
+                 target="_blank"
+                  ><img src="./assets/img/footer/X.png" alt="X"
+                /></a>
+                <a
+                  href="https://www.linkedin.com/company/billiontagsofficial/?viewAsMember=true"
+                  class="social-icon"
+                   target="_blank"
+                  ><img src="./assets/img/footer/LI.png" alt="LinkedIn"
+                /></a>
+                <a
+                  href="https://www.tiktok.com/@hey.billiontags?is_from_webapp=1&sender_device=pc"
+                  class="social-icon"
+                   target="_blank"
+                  ><img src="./assets/img/footer/TK.png" alt="TikTok"
+                /></a>
+              </div>
+            </div>
+          </div>
+          </section>
+          <!-- Contact Form -->
+          <!-- <div class="col-lg-4">
+            <div></div>
+          </div> -->
+        </div>
+        <!-- <div class="container-text py-5">
+      <div class="text-center mb-4">
+        <p>Follow us on our social media channels to stay up to date with <br> the latest in multicultural marketing trends and news:</p>
+      </div>
+      <div class="d-flex justify-content-start flex-wrap social-icons">
+        <a href="#" class="social-icon"><img src="./assets/img/footer/FB.png" alt="Facebook"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/INSTA.png" alt="Instagram"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/THREADS.png" alt="Threads"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/YT.png" alt="YouTube"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/X.png" alt="X"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/LI.png" alt="LinkedIn"></a>
+        <a href="#" class="social-icon"><img src="./assets/img/footer/TK.png" alt="TikTok"></a>
+      </div>
+    </div> -->
+        <!-- Contact Form Section -->
+        <div class="contact-form-section py-5">
+          <form class="contact-form-card shadow-lg" id="contactForm">
+            <h5 class="mb-3 fw-bold">
+              Fill out the form and<br />
+              we’ll be in touch!
+            </h5>
+            <div class="mb-2">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" class="form-control" required />
+            </div>
+            <div class="mb-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+            <div class="mb-2">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" />
+            </div>
+            <div class="mb-2">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                class="form-control"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="hear" class="form-label"
+                >How did you hear about us?</label
+              >
+              <select id="hear" class="form-select">
+                <option selected disabled>Choose...</option>
+                <option>Google</option>
+                <option>Social Media</option>
+                <option>Referral</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-20">Submit</button>
+          </form>
+        </div>
+
+        <!-- Modern Success Modal -->
+        <style>
+          .gradient-text {
+            background: linear-gradient(135deg, #ea0083, #8d5cd9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          .gradient-btn {
+            background: linear-gradient(135deg, #ea0083, #8d5cd9);
+            border: none;
+            color: white;
+            border-radius: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+          }
+
+          .gradient-btn:hover {
+            box-shadow: 0 4px 14px rgba(234, 0, 131, 0.4);
+            transform: scale(1.05);
+          }
+
+          .icon-gradient {
+            background: linear-gradient(135deg, #ea0083, #8d5cd9);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 12px;
+            width: 64px;
+            height: 64px;
+          }
+
+          /* Responsive Adjustments */
+          @media (max-width: 576px) {
+            .modal-content {
+              margin: 0 1rem;
+              padding: 2rem 1rem;
+            }
+
+            .gradient-btn {
+              width: 100%;
+            }
+
+            .icon-gradient {
+              width: 56px;
+              height: 56px;
+              padding: 10px;
+            }
+
+            .gradient-text {
+              font-size: 1.2rem;
+            }
+          }
+        </style>
+        <div
+          class="modal fade"
+          id="successContactModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div
+              class="modal-content border-0 shadow-lg rounded-4 text-center p-4"
+            >
+              <div class="modal-body">
+                <div class="mb-3">
+                  <div class="icon-gradient mb-3">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+                      alt="Success"
+                      width="48"
+                      height="48"
+                    />
+                  </div>
+                  <h5 class="fw-bold gradient-text">Form Submitted!</h5>
+                  <p class="text-muted mb-4">
+                    Thank you for reaching out to us. We’ll get back to you
+                    soon.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn gradient-btn px-4 py-2"
+                  data-bs-dismiss="modal"
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd form-section -->
+        <div class="container" id="media-kit1">
+          <div class="row align-items-center media-kit-row flex-lg-row">
+            <!-- Left image -->
+            <div class="col-lg-6 text-center mb-4 mb-lg-0">
+              <img
+                src="./assets/img/Contact-Us/Person.png"
+                alt="Media Kit Visual"
+                class="media-img"
+              />
+            </div>
+            <!-- Right form -->
+            <div class="col-lg-6 d-flex flex-column align-items-start">
+              <div class="textitems">
+                <h2>Media Kit</h2>
+                <p>Download free media-kit &amp; get to know us better</p>
+              </div>
+
+              <div class="form-container w-100">
+                <h6 class="mb-3">Fill this form to download the Media Kit</h6>
+                <form id="mediaKitForm">
+                  <div class="mb-3">
+                    <label for="media_name" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="media_name"
+                      name="media_name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="media_email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="media_email"
+                      name="media_email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="geo" class="form-label">Geo</label>
+                    <select class="form-control" id="geo" name="geo" required>
+                      <option value="">Select your region</option>
+                      <option value="unitedstates">United States</option>
+                      <option value="australia">Australia</option>
+                      <option value="canada">Canada</option>
+                      <option value="europe">Europe</option>
+                      <option value="europe">Asia-Pacific</option>
+                      <option value="europe">Middle East</option>
+                      <option value="europe">Newzealand</option>
+                    </select>
+                  </div>
+
+                  <button id="submitBtn" type="submit" class="btn btn-primary">
+                    Download
+                  </button>
+                </form>
+              </div>
+            </div>
+            <!-- Modal -->
+            <style>
+              .modal-content {
+                border-radius: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                animation: slideFadeIn 0.4s ease-out;
+              }
+
+              .icon-circle {
+                background: linear-gradient(135deg, #ea0083, #8d5cd9);
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: popIn 0.5s ease-out;
+              }
+
+              .gradient-btn {
+                background: linear-gradient(135deg, #ea0083, #8d5cd9);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                font-size: 1rem;
+              }
+
+              .gradient-btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(234, 0, 131, 0.4);
+              }
+
+              @keyframes popIn {
+                0% {
+                  transform: scale(0.7);
+                  opacity: 0;
+                }
+                100% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+
+              @keyframes slideFadeIn {
+                0% {
+                  opacity: 0;
+                  transform: translateY(40px);
+                }
+                100% {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+
+              /* Responsive Tweaks */
+              @media (max-width: 576px) {
+                .modal-content {
+                  border-radius: 1rem;
+                  margin: 0 1rem;
+                }
+
+                .modal-body {
+                  padding: 2rem 1.5rem;
+                }
+
+                .gradient-btn {
+                  width: 100%;
+                  padding: 0.75rem;
+                  font-size: 1rem;
+                }
+
+                .icon-circle {
+                  width: 56px;
+                  height: 56px;
+                }
+
+                h4 {
+                  font-size: 1.25rem;
+                }
+
+                p {
+                  font-size: 0.95rem;
+                }
+              }
+            </style>
+            <!-- Success Modal -->
+            <div
+              class="modal fade"
+              id="successModal"
+              tabindex="-1"
+              aria-labelledby="successModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+                  <div class="modal-body text-center py-5 px-4">
+                    <div class="mb-3">
+                      <div class="icon-circle mx-auto mb-3">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          fill="#fff"
+                          class="bi bi-check-lg"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M13.485 1.929a.75.75 0 0 1 1.06 1.06l-8 8a.75.75 0 0 1-1.06 0l-4-4a.75.75 0 0 1 1.06-1.06L6 9.439l7.485-7.51z"
+                          />
+                        </svg>
+                      </div>
+                      <h4 class="fw-bold" style="color: #ea0083">Success!</h4>
+                      <p class="text-muted mt-2 mb-4">
+                        Thank you! Your form has been submitted.<br />
+                        Your media kit will download shortly.
+                      </p>
+                      <button
+                        type="button"
+                        class="btn gradient-btn px-4 py-2"
+                        data-bs-dismiss="modal"
+                      >
+                        Got it
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <style>
+            .btn {
+              margin-left: 65%;
+            }
+            @media (max-width: 475px) {
+              .btn {
+                margin-left: 60%;
+              }
+            }
+            .media-img img {
+              object-fit: contain;
+            }
+            .media-img {
+              width: 200%;
+              height: auto;
+            }
+            .textitems {
+              margin-left: 25%;
+              margin-top: 15%;
+            }
+            .textitems h2 {
+              text-align: end;
+              font-family: "Raleway", sans-serif;
+              font-weight: 800;
+              font-size: 2.5rem;
+            }
+            .textitems p {
+              font-size: 0.7rem;
+              text-align: end;
+              font-family: "Raleway", sans-serif;
+            }
+
+            .form-container {
+              background: transparent;
+              border-radius: 18px;
+              box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+              padding: 2rem;
+              max-width: 400px;
+              margin-right: 0%;
+              backdrop-filter: blur(16px) saturate(180%);
+              -webkit-backdrop-filter: blur(16px) saturate(180%);
+            }
+            @media (max-width: 991.98px) {
+              .media-kit-row {
+                flex-direction: column;
+                align-items: center;
+              }
+              .media-img {
+                margin-bottom: 2rem;
+                border-radius: 18px 18px 0 0;
+                max-width: 90%;
+                margin-left: -17%;
+              }
+              .btn {
+                margin-left: 45%;
+              }
+              .form-container {
+                max-width: 650px;
+                /* margin-top: -40%; */
+              }
+            }
+
+            @media (max-width: 478.98px) {
+              .media-img {
+                margin-top: 2rem;
+                /* border-radius: 18px 18px 0 0; */
+                width: 100%;
+              }
+              .textitems {
+                margin-left: 0%;
+                margin-top: -15%;
+              }
+              .textitems h2 {
+                text-align: center;
+
+                font-size: 3rem;
+              }
+              .textitems p {
+                text-align: center;
+                font-size: 1rem;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+     <!-- footer section  -->
+    <section class="footer-section">
+      <!-- Footer Content -->
+      <footer>
+        <div class="footer-container position-relative">
+          <!-- Video Background -->
+          <video autoplay muted loop playsinline id="video-bg">
+            <source
+              src="./assets/img/footer/Footer BG loop.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Optional dark overlay for contrast -->
+          <div class="video-overlay"></div>
+
+          <!-- Footer content -->
+          <div class="container-fluid position-relative content-on-video">
+            <div class="row align-items-start justify-content-between">
+              <div
+                class="col-lg-3 col-md-3 mb-4 mb-lg-0 text-lg-start text-md-start"
+              >
+                <img
+                  src="./assets/img/Logo/BILLION TAGS PNG.png"
+                  alt="Billiontags Logo"
+                  class="footer-logo"
+                />
+                <p class="mt-2 mb-3" style="max-width: 440px">
+                  We are Strategically Innovative. Technologically Advanced.
+                  Globally-Present. Socially Active. Truly Original &amp; Quite
+                  Ingenious. Billiontags is a creative factory!
+                </p>
+                <div class="mb-2 mt-5 fw-bold">Connect with us!</div>
+
+                <div
+                  class="d-flex justify-content-start align-items-center flex-wrap social-icons blend-multiply"
+                >
+                  <a
+                    href="https://www.facebook.com/billiontags/"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/FB.png" alt="Facebook"
+                  /></a>
+                  <a
+                    href="https://www.instagram.com/hey.billiontags/"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/INSTA.png" alt="Instagram"
+                  /></a>
+                  <a
+                    href="https://www.threads.com/@hey.billiontags"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/THREADS.png" alt="Threads"
+                  /></a>
+                  <a
+                    href="https://www.youtube.com/@Billiontags"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/YT.png" alt="YouTube"
+                  /></a>
+                  <a href="https://x.com/billiontags" class="social-icon"
+                    ><img src="./assets/img/footer/X.png" alt="X"
+                  /></a>
+                  <a
+                    href="https://www.linkedin.com/company/billiontagsofficial/?viewAsMember=true"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/LI.png" alt="LinkedIn"
+                  /></a>
+                  <a
+                    href="https://www.tiktok.com/@hey.billiontags?is_from_webapp=1&sender_device=pc"
+                    class="social-icon"
+                    ><img src="./assets/img/footer/TK.png" alt="TikTok"
+                  /></a>
+                </div>
+              </div>
+              <!-- Center: Links -->
+              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                <div class="row">
+                  <div class="col-4 col-md-4 mb-3">
+                    <ul class="footer-links">
+                      <li>
+                        <a href="index.html"><strong>Home</strong></a>
+                      </li>
+                      <li>
+                        <a href="company.html"><strong>Company</strong></a>
+                      </li>
+                      <li>
+                        <a href="services.html"><strong>Services</strong></a>
+                      </li>
+                      <li>
+                        <a href="platforms.html"><strong>Platforms</strong></a>
+                      </li>
+                      <li>
+                        <a href="channels.html"><strong>Channels</strong></a>
+                      </li>
+                      <li>
+                        <a href="brands.html"><strong>Brands</strong></a>
+                      </li>
+                      <li>
+                        <a href="expertise.html"><strong>Expertise</strong></a>
+                      </li>
+                      <li>
+                        <a href="blog.html"><strong>Blogs</strong></a>
+                      </li>
+                      <li>
+                        <a href="utility.html"><strong>Utility</strong></a>
+                      </li>
+                      <li>
+                        <a href="contact.html"><strong>Contact Us</strong></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-md-4 mb-3">
+                    <div class="fw-bold mb-2">Markets</div>
+                    <ul class="footer-links">
+                      <li><a href="market-us.html">United States</a></li>
+                      <li><a href="market-canada.html">Canada</a></li>
+                      <li><a href="market-australia.html">Australia</a></li>
+                      <li><a href="market-newzealand.html">New Zealand</a></li>
+                      <li><a href="markets-europe.html">Europe</a></li>
+                      <li><a href="market-middleeast.html">Middle East</a></li>
+                      <li><a href="market-asia.html">Asia-Pacific</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-4 col-md-4 mb-3">
+                    <div class="fw-bold mb-2">Audiences</div>
+                    <ul class="footer-links">
+                      <li><a href="ethnicities.html">Ethnicities</a></li>
+                      <li><a href="new-commers.html">Newcomers</a></li>
+                      <li><a href="pride.html">Pride</a></li>
+                      <li><a href="religion.html">Religion</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Right: Address and Illustration -->
+              <div
+                class="col-lg-3 col-md-3 text-lg-start text-center position-relative"
+              >
+                <div class="footer-address mb-3">
+                  <div class="fw-bold mb-1">Address</div>
+                  New Door No.782, Old No.427, 1st Floor, Anna Salai, Nandanam,
+                  Chennai, Tamil Nadu - 600 035.
+                  <div class="gif-overlay">
+                    <img
+                      src="assets/img/footer/Doodle_Navy_Blue.gif"
+                      alt="Animated GIF"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="footer-copy">
+                Copyrights © 2025 Billiontags | Digital Marketing Company | All
+                rights reserve
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- Bootstrap JS (optional, for dropdowns etc) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        const logo = document.getElementById("navbarLogo");
+        if (window.scrollY > 40) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // media kit form
+      document
+        .getElementById("mediaKitForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("media_name").value.trim();
+          const email = document.getElementById("media_email").value.trim();
+          const geo = document.getElementById("geo").value;
+          const formData = { name, email, geo };
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbyhUFZ90KZ7M59CS7H2cTEIKD9e8EVya4KzmGabj0dN850w-oHWjw2g7ajgip2YzY8S/exec";
+
+          fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "no-cors", // Avoid CORS errors but can't read response
+          })
+            .then(() => {
+              // Assume success since we can't read response with no-cors mode
+              const modal = new bootstrap.Modal(
+                document.getElementById("successModal")
+              );
+              modal.show();
+
+              const pdfMap = {
+                canada: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                australia: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                unitedstates: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                europe: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                middleeast: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                newzealand: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+                asiapacific: "https://billiontagsads.com/assets/img/Media_kit/Australia.pdf",
+
+
+              };
+
+              const pdfUrl = pdfMap[geo];
+
+              setTimeout(() => {
+                // if (pdfUrl) {
+                //   const a = document.createElement("a");
+                //   a.href = pdfUrl;
+                //   a.download = "";
+                //   document.body.appendChild(a);
+                //   a.click();
+                //   document.body.removeChild(a);
+                // }
+                if (pdfUrl) {
+  const a = document.createElement("a");
+  a.href = pdfUrl;
+  a.download = pdfUrl.split('/').pop(); // sets filename from URL
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+
+                // Clear the form after download
+                document.getElementById("mediaKitForm").reset();
+              }, 500);
+            })
+            .catch((error) => {
+              console.error("Error!", error);
+              alert("Failed to submit form.");
+            });
+        });
+    </script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get values
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const hear = document.getElementById("hear").value;
+
+          // Validate fields
+          if (!name) {
+            alert("Please enter your name.");
+            return;
+          }
+
+          const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/i;
+          if (!email || !emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+          }
+
+          const phonePattern = /^[0-9]{7,15}$/;
+          if (!phone || !phonePattern.test(phone)) {
+            alert("Please enter a valid phone number (7-15 digits).");
+            return;
+          }
+
+          if (!message) {
+            alert("Please enter your message.");
+            return;
+          }
+
+          if (!hear) {
+            alert("Please select how you heard about us.");
+            return;
+          }
+
+          // If all valid, send data
+          const formData = { name, email, phone, message, hear };
+          const scriptURL =
+            "https://script.google.com/macros/s/AKfycbymvzDHb3nErGVEZllj1oZ-0lAL4oZGTgOoqNvr8w3RcV3JrSG4ypdzruY0Ev0h_SmWiw/exec"; // Replace this
+
+          fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "no-cors",
+          })
+            .then(() => {
+              const modal = new bootstrap.Modal(
+                document.getElementById("successContactModal")
+              );
+              modal.show();
+              document.getElementById("contactForm").reset();
+            })
+
+            .catch((error) => {
+              console.error("Error!", error.message);
+              alert("Something went wrong. Please try again.");
+            });
+        });
+    </script>
+  </body>
+</html>
